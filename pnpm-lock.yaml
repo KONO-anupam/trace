@@ -55,6 +55,8 @@ importers:
         specifier: 5.9.2
         version: 5.9.2
 
+  apps/http-backend: {}
+
   apps/web:
     dependencies:
       '@repo/ui':
@@ -91,6 +93,8 @@ importers:
       typescript:
         specifier: 5.9.2
         version: 5.9.2
+
+  apps/ws-backend: {}
 
   packages/eslint-config:
     devDependencies:
