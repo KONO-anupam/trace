@@ -17,7 +17,10 @@ wss.on('connection',function connection(ws,request){
     }
     const decoded = jwt.verify(token,process.env.JWT_SECRET!);
 
-    if(!decoded || !(decoded as JwtPayload).userId){
+    if(typeof decoded === 'string'){
+        return;
+    }
+    if(!decoded || !(decoded ).userId){
         ws.close()
         return;
     }

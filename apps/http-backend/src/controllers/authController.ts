@@ -3,8 +3,15 @@ import {
   signupService,
   signinService,
 } from "../services/authService";
+import { CreateUserSchema } from "@repo/common/types"
 
 export const signup = async (req: Request, res: Response) => {
+  const data = CreateUserSchema.safeParse(req.body)
+  if(!data.success){
+    return res.json({
+      message: "Incorrect inputs"
+    })
+  }
   try {
     const { email, password } = req.body;
 

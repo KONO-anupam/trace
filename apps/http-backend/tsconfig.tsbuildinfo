@@ -1,1 +1,1 @@
-{"root":["./src/index.ts"],"version":"5.9.2"}
+{"root":["./src/db.ts","./src/index.ts","./src/controllers/authcontroller.ts","./src/controllers/roomcontroller.ts","./src/middlewares/authmiddleware.ts","./src/middlewares/errormiddleware.ts","./src/middlewares/validatemiddleware.ts","./src/routes/authroutes.ts","./src/routes/roomroutes.ts","./src/services/authservice.ts","./src/services/roomservice.ts","./src/utils/hash.ts","./src/utils/jwt.ts","./src/validators/authschema.ts"],"errors":true,"version":"5.9.2"}
