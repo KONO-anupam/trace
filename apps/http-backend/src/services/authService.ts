@@ -1,9 +1,9 @@
 import { comparePassword, hashPassword } from "../utils/hash"
-import { prisma } from "../db";
+import { prismaClient } from "@repo/db/client"
 import { signToken } from "../utils/jwt";
 
 export const signupService = async(email: string, password: string)=>{
-    const existingUser = await prisma.user.findUnique({
+    const existingUser = await prismaClient.user.findUnique({
         where: {email}
     })
 
@@ -13,7 +13,7 @@ export const signupService = async(email: string, password: string)=>{
 
     const hashedPassword = await hashPassword(password);
 
-    const user = prisma.user.create({
+    const user = prismaClient.user.create({
         data: {
             email,
             password: hashedPassword
@@ -26,7 +26,7 @@ export const signupService = async(email: string, password: string)=>{
 }
 
 export const signinService = async (email: string, password: string) =>{
-    const user = await prisma.user.findUnique({
+    const user = await prismaClient.user.findUnique({
         where: {email}
     })
 
